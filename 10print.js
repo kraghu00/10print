@@ -11,21 +11,21 @@ const w = process.stdout.columns
 // const FgBrightBlue = '\x1b[94m'
 // const BgBrightRed = '\x1b[91m'
 
-
 function draw () {
-  setTimeout(draw, 300)
+  setTimeout(draw, 100)
   let output = ''
-  var pres = elecs[Math.floor(Math.random()*elecs.length)]
+
   for (let i = 0; i < w*2; i++) {
+    var pres = elecs[Math.floor(Math.random()*elecs.length)]
     if (pres > 0.5) {
       output += '\x1b[44m'
     } else {
       output += '\x1b[41m'
     }
     if (Math.random() > pres) {
-      output += 'R'
+      output += '\x1b[91mR'
     } else {
-      output += 'D'
+      output += '\x1b[94mD'
     }
   }
   console.log(output)
