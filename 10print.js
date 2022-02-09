@@ -6,15 +6,26 @@ const elecs = [lbj, nix, nix2, car, rea, rea2, hwb, cli, cli2, gwb, gwb2, obm, o
 
 const w = process.stdout.columns
 
+// const BgBlue = '\x1b[44m'
+// const BgRed = '\x1b[41m'
+// const FgBrightBlue = '\x1b[94m'
+// const BgBrightRed = '\x1b[91m'
+
+
 function draw () {
   setTimeout(draw, 300)
-  var pres = elecs[Math.floor(Math.random()*elecs.length)]
   let output = ''
+  var pres = elecs[Math.floor(Math.random()*elecs.length)]
   for (let i = 0; i < w*2; i++) {
     if (pres > 0.5) {
-      output += 'D'
+      output += '\x1b[44m'
     } else {
+      output += '\x1b[41m'
+    }
+    if (Math.random() > pres) {
       output += 'R'
+    } else {
+      output += 'D'
     }
   }
   console.log(output)
