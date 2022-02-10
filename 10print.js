@@ -7,7 +7,7 @@ const obm2 = 332/538; const trmp = (538-304)/538; const bid = 306/538;
 const elecs = [
    lbj, nix, nix2, car, rea, rea2, hwb, cli, cli2, gwb,
    gwb2, obm, obm2, trmp, bid
- ] // election data as array
+ ]                                                            // election data as array
 
 const w = process.stdout.columns
 
@@ -17,7 +17,7 @@ const w = process.stdout.columns
 // const BgBrightRed = '\x1b[91m'
 
 function draw () {
-  setTimeout(draw, 46) // number of presidents in US history :)
+  setTimeout(draw, 46)                                        // number of presidents in US history :)
   let output = ''
 
   for (let i = 0; i < w*2; i++) {
